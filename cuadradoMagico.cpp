@@ -28,22 +28,22 @@ int main(){
 	int j = 1;
 	while (k < 10) {
 		//avance diagonal
-		int m = i - 1;
-		int n = j + 1;
+		int filas = i - 1;//comienza en la fila -1 (donde esta el primer numero)
+		int columnas = j + 1;//comienza en la columna 2 (donde está el primer numero)
 		inicial = inicial + 1; //siguiente numero en el cuadrado magico
-		if (m < 0 && n < 3) {
+		if (filas < 0 && columnas < 3) {//if columna<0 && fila<3
 			opcion = 1;
 		}
 		else {
-			if (m < 3 && m >= 0 && n>2) {
+			if (filas < 3 && filas >= 0 && columnas>2) {
 				opcion = 2;
 			}
 			else {
-				if (m < 0 && n>2) {
+				if (filas < 0 && columnas>2) {
 					opcion = 3;
 				}
 				else {
-					if (m >= 0 && m < 3 && n >= 0 && n < 3) {
+					if (filas >= 0 && filas < 3 && columnas >= 0 && columnas < 3) {
 						opcion = 4;
 					}
 				}
@@ -52,32 +52,32 @@ int main(){
 		switch (opcion)
 		{
 			case 1:
-				m = 2;
-				cuadradoMagico[m][n] = inicial;
+				filas = 2;
+				cuadradoMagico[filas][columnas] = inicial;
 				break;
 			case 2:
-				n = 0;
-				cuadradoMagico[m][n] = inicial;
+				columnas = 0;
+				cuadradoMagico[filas][columnas] = inicial;
 				break;
 			case 3:
-				m = -1 * m;
-				n = n - 1;
-				cuadradoMagico[m][n] = inicial;
+				filas = -1 * filas;
+				columnas = columnas - 1;
+				cuadradoMagico[filas][columnas] = inicial;
 				break;
 			case 4:
-				if (cuadradoMagico[m][n] == 0) {
-					cuadradoMagico[m][n] = inicial;
+				if (cuadradoMagico[filas][columnas] == 0) {
+					cuadradoMagico[filas][columnas] = inicial;
 				}
 				else {
 					i++;
 					cuadradoMagico[i][j] = inicial;
-					m = i;
-					n = j;
+					filas = i;
+					columnas = j;
 				}
 				break;
 		}
-		i = m;
-		j = n;
+		i = filas;
+		j = columnas;
 		k++;
 
 		//impresion paso a paso
