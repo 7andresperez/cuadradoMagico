@@ -5,7 +5,7 @@ using namespace std;
 int main(){
 	int cuadradoMagico[3][3];
 	int inicial =1, opcion, k = 1;
-
+	cout<<"Este programa genera cuadrado magico de orden 3x3."<<endl;
 	//llenar la matriz de ceros
 	for (int a = 0; a < 3; a++) {
 		for (int b = 0; b < 3; b++) {
