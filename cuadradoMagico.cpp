@@ -22,14 +22,14 @@ int main(){
 		cout << endl;//salto de division de fila
 	}
 	cout << endl;
-	
-	//Inicio método siamés
+
+	//Inicio metodo siames
 	int i = 0;
 	int j = 1;
 	while (k < 10) {//k es la cantidad de numeros que se pueden almacenar en el cuadrado magico. 9 porque el cuadrado es de 3x3
 		//avance diagonal
 		int filas = i - 1;//comienza en la fila -1 (donde esta el primer numero)
-		int columnas = j + 1;//comienza en la columna 2 (donde está el primer numero)
+		int columnas = j + 1;//comienza en la columna 2 (donde esta el primer numero)
 		contador = contador + 1; //siguiente numero en el cuadrado magico
 		if (filas < 0 && columnas < 3) {//if columna<0 && fila<3
 			opcion = 1;
